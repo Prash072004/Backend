@@ -10,4 +10,8 @@ wss.on("connection", function(socket) {
     setInterval(() => {
         socket.send("Current price of solana is " + Math.random());
     }, 500);
+
+    socket.on("message", (e) => {
+        console.log(e.toString());
+    })
 });
